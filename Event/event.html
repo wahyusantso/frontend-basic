@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event World</title>
+
+    <style>
+        .contents {
+            position: fixed;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid black;
+            padding: 15px;
+        }
+
+        #generateButton {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contents" hidden>
+        <button id="incrementButton">Tekan Aku :)</button>
+        <h3>Kamu sudah menakan tombol di atas sebanyak <span id="count">0</span></h3>
+    </div>
+    <script>
+        //fungsi welcome dan increment untuk event handler
+
+        function welcome() {
+            alert('Sim salabim muncullah elemen-elemen HTML!');
+            const content = document.querySelector('.contents');
+            content.removeAttribute('hidden');
+        }
+
+        function increment() {
+            document.getElementById('count').innerText++;
+
+            if (document.getElementById('count').innerText == 7) {
+                const hiddenMessage = document.createElement('h4');
+                hiddenMessage.innerHTML = "Selamat! anda menemukan hadiah tersembunyi...<br>";
+                const image = document.createElement('img');
+                image.setAttribute('src', 'https://i.ibb.co/0V49VRZ/catto.jpg');
+                const contents = document.querySelector('.contents');
+                contents.appendChild(hiddenMessage).appendChild(image);
+            }
+        }
+
+        /* panggil fungsi
+        document.getElementById('incrementButton').onclick = increment;
+        document.body.onload = welcome;
+        **/
+
+        /*event addEventListener
+        addEventListener mendukung multiple event listener */
+        window.addEventListener('load', welcome); //event load menggunakan window karena addEventListener tidak dapat bekerja pada tag body
+        document.getElementById('incrementButton').addEventListener('click', increment);
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memassak Air</title>
+</head>
+<body>
+    <p id="name">Langkah langkah memasak air</p>
+    <ol id="daftar">
+        <li id="awal">Masukkan air kedalam wadah.</li>
+        <li id="akhir">Matikan kompor.</li>
+    </ol>
+    <hr size="2" width="95%" color="black">
+
+    <script>
+        const newElement = document.createElement('li');
+        newElement.innerText = "Selamat menikmati!";
+
+        const daftar = document.getElementById('daftar');
+        daftar.appendChild(newElement); //menambahkan element baru dengan appendChild
+
+        const elementAwal = document.createElement('li');
+        elementAwal.innerHTML = "Hidupkan kompor.";
+        
+        const itemAwal = document.getElementById('awal');
+        // insertBefore, Method ini menerima dua buah parameter, 
+        // yaitu (1) elemen baru yang ingin disisipkan dan (2) child element yang akan dijadikan patokan diletakkannya elemen baru.
+        daftar.insertBefore(elementAwal, itemAwal);
+    </script>
+</body>
+</html>

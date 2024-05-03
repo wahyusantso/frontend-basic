@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Capturing World</title>
+    
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+  </head>
+  <body>
+    <div align="center" id="langit">
+      LANGIT
+      <div align="center" id="luar">
+        LUAR
+        <div align="center" id="tengah">
+          TENGAH
+          <div align="center" id="dalam">DALAM</div>
+        </div>
+      </div>
+    </div>
+
+    <script >
+        const divs = document.getElementsByTagName('div');
+
+        for (let el of divs) {
+        el.addEventListener('click', function () {
+            alert('ELEMEN ' + el.getAttribute('id').toUpperCase());
+        }, true); 
+        }
+        // menambahkan kondisi true agar event dimulai dari parent atau paling luar
+    </script>
+  </body>
+</html>

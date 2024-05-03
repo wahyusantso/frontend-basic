@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Cube World!</title>
+    <style>
+        button {
+            width: 200px;
+            font-size: 15px;
+            margin: 8px;
+            padding: 3px;
+        }
+        .content-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-center">
+        <h2>Its Cube Time!</h2>
+        <img id="gambar"
+            src="https://dicoding-web-img.sgp1.cdn.digitaloceanspaces.com/original/commons/homepage-dicoding-challenge-illustration.png"
+            alt="Its a rubiks cube!" width="150" height="100">
+        <p id="caption"><b>Sudah siap untuk memecahkan teka-teki permainan tersebut?</b></p>
+        <div class="button-group">
+            <div class="button">
+                <button>Sejarah</button>
+            </div>
+            <div class="button">
+                <button>Permainan</button>
+            </div>
+            <div class="button">
+                <button>Fun Fact</button>
+            </div>
+            <div class="button">
+                <button>Play (Coming Soon)</button>
+            </div>
+            <div class="button">
+                <button>Exit</button>
+            </div>
+        </div>
+    </div>
+    <hr size="2" width="95%" color="black">
+    <div id="links">
+        <p>Situs lainnya yang tidak kalah menarik:</p>
+        <ul>
+            <li><a href="http://www.dicoding.com" id="dicodingLink">Dicoding</a></li>
+            <li><a href="http://www.google.com" id="googleLink">Google</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const gambar = document.getElementById('gambar');
+        gambar.setAttribute('width', 300);
+        gambar.setAttribute('height', 200);
+
+        const buttons = document.querySelectorAll('button') //mengambil semua class button
+        const playButton = buttons[3]; //akses salah satu button dengan indeks
+        playButton.setAttribute("type", "submit"); //ubah type button
+
+        //manipulasi innerText
+        const dicoding = document.getElementById('dicodingLink');
+        const google = document.getElementById('googleLink');
+
+        dicoding.innerText = "Belajar Programming di Dicoding";
+        google.innerText = "Mencari sesuatu di Google";
+
+        //manipulasi innerHtml
+        dicoding.innerHTML = "<i>Belajar Programming di Dicoding<i>";
+        
+        //manipulasi style.property
+        const buttonClass = document.getElementsByClassName('button');
+        for(const itemButton of buttonClass) {
+            itemButton.children[0].style.borderRadius = '6px';
+        }
+
+    </script>
+</body>
+</html>
